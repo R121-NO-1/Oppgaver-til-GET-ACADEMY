@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html lang="en"> <!-- en=english, basically metadata om innholdet i nettsiden-->
+
+
+
+<!-- oppgave: lag en visuell teller -->
+<head>
+    <meta charset= "UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, intial scare=1.0">
+<h2>LAG EN VISUELL teller</h2>
+</head>
+
+<body>
+
+<style>
+    .Opp {
+        width: 100px;
+        height: 70px;
+        font-size: 20px;
+        padding: 10px;
+    }
+
+    .Ned {
+        width: 100px;
+        height: 70px;
+        font-size: 20px;
+        padding-right: 20px;
+    }
+
+</style>
+
+
+    <h1 id="teller">dette er inholder</h1>
+
+    <div class="Opp">
+        <button onclick="TellerOpp"></button>
+    </div>
+
+    <div class="Ned">
+        <button onclick="TellerNed"></button>
+    </div>
+
+<script>
+
+
+    let my_teller = document.getElementById('')
+    let count = 0;
+    
+    
+    function TellerOpp(){
+        count++;
+        document.getElementById('teller').innerText = count;
+        document.getElementById('teller').in
+
+    }
+    function TellerNed(){
+        count--;
+        document.getElementById('teller').innerText = count;
+        document.getElementById('teller').in
+    }
+
+
+</script>
+
+
+
+
+</body>
+
+</html>

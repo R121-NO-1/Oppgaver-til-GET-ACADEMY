@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html lang="en"> <!-- en=english, basically metadata om innholdet i nettsiden-->
+
+<head>
+    <meta charset= "UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, intial scare=1.0">
+
+<h1> Introduksjons tekst </h1> 
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<p> <!-- Introduksjons tekst -->
+
+<body>
+    <ul> <!-- Rekke og rad av hobbyer -->
+        <li id="A">Gaming</li>
+        <li id="B">Hage Arbeid</li>
+        <li id="C">Programmering</li>
+        <li id="D">Baking</li>
+    </ul>
+
+
+<button onclick="FARGEKNAPP()">FARGE</button> <!-- knappen som bytter farge på noe tilfeldig  -->
+<script>
+
+
+var Green = "#00ff00";
+var Red = "#ff0000";
+var Blue = "#0000FF";
+var Yellow = "#FFFF00";
+const colors = ["Green", "Red","Blue", "Yellow"]; 
+
+
+function FARGEKNAPP(){
+    let random = Math.floor(Math.random()* colors.length);
+    var mittElement = document.getElementById("A")
+    mittElement.style.backgroundColor = colors[random];
+    console.log (random, colors[random]); 
+
+
+} 
+
+
+</script>
+
+
+
+</body>
