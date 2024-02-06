@@ -1,0 +1,193 @@
+<!DOCTYPE HTML>
+<html lang="en"> <!-- en=english, basically metadata om innholdet i nettsiden-->
+
+<head>
+    <meta charset= "UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, intial scare=1.0">
+</head>
+
+<body>
+    <main> 
+        <div id ="time">
+            <span class="digit" id="hr">
+                00
+            </span>
+            <span class="txt">timer</span>
+            
+            <span class="digit" id="min">
+                00
+            </span>
+            <span class="txt">minutter</span>
+            
+            <span class="digit" id="s">
+                00
+            </span>
+            <span class="txt">sekunder</span>
+        </div>
+        
+        <div class="button_Container">
+            <button type="button" id="Start"> Start </button>
+            <button type="button" id="Lap"> Lap </button>
+            <button type="button" id="Stop_Reset"> Stop/Reset </button>
+        </div>
+
+<style>
+    body {
+        padding: 0;
+        margin: 0;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .button_Container{
+        display: flex;
+        flex-direction: column; 
+        justify-content: center;
+        align-items: center;
+    }
+    .digit {
+        font-size: 50px;
+        font-weight: bold;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+    .txt{
+        font-size: 60px; 
+        
+    }
+
+    .button{
+        width: 100px;
+        padding: 10px 20px;
+        margin: 8px 20px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+
+    }
+
+#Start {
+    background-color: #009779;
+
+}
+
+#Stop_Reset {
+background-color: red;
+
+}
+#Lap{
+    background-color: aquamarine;
+
+}
+
+</style>
+    
+
+    </main>
+    <script>
+        
+        let startBtn = document.getElementById('start'); 
+let stopBtn = document.getElementById('stop'); 
+let resetBtn = document.getElementById('reset'); 
+  
+let hour = 0o0; 
+let minute = 0o0; 
+let second = 0o0; 
+let count = 0o0; 
+  
+startBtn.addEventListener('click', function () { 
+    timer = true; 
+    stopWatch(); 
+}); 
+  
+stopBtn.addEventListener('click', function () { 
+    timer = false; 
+}); 
+  
+resetBtn.addEventListener('click', function () { 
+    timer = false; 
+    hour = 0; 
+    minute = 0; 
+    second = 0; 
+    count = 0; 
+    document.getElementById('hr').innerHTML = "00"; 
+    document.getElementById('min').innerHTML = "00"; 
+    document.getElementById('sec').innerHTML = "00"; 
+    document.getElementById('count').innerHTML = "00";
+     
+});
+
+ <button id="start-button">Start</button>
+ 
+ 
+   const startButton = document.getElementById('start-button');
+   startButton.addEventListener('click', function() {
+     // Your code for starting the timer here
+   });
+ 
+  
+function stopWatch() { 
+    if (timer) { 
+        count++; 
+  
+        if (count == 100) { 
+            second++; 
+            count = 0; 
+        } 
+  
+        if (second == 60) { 
+            minute++; 
+            second = 0; 
+        } 
+  
+        if (minute == 60) { 
+            hour++; 
+            minute = 0; 
+            second = 0; 
+        } 
+  
+        let hrString = hour; 
+        let minString = minute; 
+        let secString = second; 
+        let countString = count; 
+  
+        if (hour < 10) { 
+            hrString = "0" + hrString; 
+        } 
+  
+        if (minute < 10) { 
+            minString = "0" + minString; 
+        } 
+  
+        if (second < 10) { 
+            secString = "0" + secString; 
+        } 
+  
+        if (count < 10) { 
+            countString = "0" + countString; 
+        } 
+    }
+}
+
+    </script>
+</body>
+
+<!-- Oppgave: Stoppeklokke oppgave -->
+<!--
+Oppgave - Stoppeklokke
+Lag en stoppeklokke.
+
+Begynn med å lage én knapp som setter i gang tiden - tiden lagres i en variabel, og vises fram i nettleseren.
+
+Lag så en knapp for å ta "rundetider" - altså at du lagrer og viser tiden i dét du trykker på pauseknappen, samtidig som tidtakeren stiller seg tilbake på 0 og begynner på nytt.
+
+Lag en knapp for å blanke ut og stoppe klokka og timeren.
+
+Ting som kan være lurt å sjekke ut: SetTimeout() og SetInterval()
+
+Husk at dette er en oppgave hvor du skal trene på å bruke variabler!
+
+-->
+
+<h1> Stoppeklokke !! </h1>

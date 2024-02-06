@@ -34,30 +34,33 @@
     <h1 id="teller">dette er inholder</h1>
 
     <div class="Opp">
-        <button onclick="TellerOpp"></button>
+        <button onclick="TellerOpp()">&#8593;</button>
     </div>
 
     <div class="Ned">
-        <button onclick="TellerNed"></button>
+        <button onclick="TellerNed()">&#8595;</button>
     </div>
 
 <script>
 
 
-    let my_teller = document.getElementById('')
+    let my_teller = document.getElementById('teller');
     let count = 0;
     
     
     function TellerOpp(){
         count++;
-        document.getElementById('teller').innerText = count;
-        document.getElementById('teller').in
+        my_teller.innerText = count;
+        //document.getElementById('teller').innerText = count;
+        //document.getElementById('teller').in
 
     }
     function TellerNed(){
         count--;
-        document.getElementById('teller').innerText = count;
-        document.getElementById('teller').in
+        my_teller.innerText = count;
+        
+        //document.getElementById('teller').innerText = count;
+        //document.getElementById('teller').in
     }
 
 

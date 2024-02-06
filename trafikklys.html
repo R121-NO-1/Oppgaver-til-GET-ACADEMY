@@ -1,0 +1,213 @@
+<!DOCTYPE HTML>
+<html lang="en"> <!-- en=english, basically metadata om innholdet i nettsiden-->
+
+
+
+<!-- oppgave: TRAFIKK LYS 
+
+Oppgave - Trafikklys
+Denne oppgaven løser du med: Funksjoner, Parameter, Onclick og evt setTimeout().
+
+I denne oppgaven skal du lage et trafikklys som bytter fra rødt - til rødt og gult og så til grønt ved hjelp av knapper som bytter hvilke sirkler som har farge - og hvilke farge den har.
+
+1. Lag tre sirkler under hverandre, som skal kunne ha en bakgrunnsfarge. Det øverste kan bli rødt, det i midten kan bli gult/oransje og det nederste grønt.
+
+2. Lag 3 knapper - en før rødt lys, en for rødt og gult og en for grønt lys.
+
+3. Bruk funksjon med parameter, CSS klasser og onclick for å få knappene til å endre lysene.
+
+4. Når du har fått til dette kan du utfordre deg selv og forsøke å finne ut hvordan man kan automatisere trafikklyset ved hjelp av setTimeout()
+-->
+
+
+<head>
+    <meta charset= "UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        .inactive {
+            opacity: 10%;
+        }
+    
+        #circle1{
+            height: 100px;
+            width: 100px;
+            border-radius: 1px;
+            background-color: red;
+            border-radius: 50%;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+        }
+    
+        #circle2{
+            height: 100px;
+            width: 100px;
+            border-radius: 1px;
+           background-color: yellow;
+            border-radius: 50%;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+        }
+    
+        #circle3{
+            height: 100px;
+            width: 100px;
+            border-radius: 1px;
+            background-color: greenyellow; 
+            border-radius: 50%;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body style=background-color:gray;>
+    <h2>TRAFIKK LYS</h2>
+    <div id="circle1"> 
+        Rødt
+    </div>
+
+    <div id="circle2"> 
+            Gult
+    </div>
+
+    <div id="circle3"> 
+                Grønt
+    </div>
+    
+<div class="button_Container">
+    <div class="buttonRød"> 
+        <button onclick="turnOn('active','inactive','inactive')"> 
+            Stop
+        </button> 
+    </div>
+
+    <div class="buttonGul"> 
+        <button onclick="turnOn('active', 'active', 'inactive')">
+            Get ready
+        </button> 
+    </div>
+
+    <div class="buttonGul2"> 
+        <button onclick="turnOn('inactive', 'active', 'inactive')">
+            Slow down
+        </button> 
+    </div>
+
+    <div class="buttonGrønn"> 
+        <button onclick="turnOn('inactive', 'inactive','active')">
+            Go
+        </button> 
+    </div>
+<div class = "buttonAuto"> 
+    <button onclick="auto()">
+        automatisere
+    </button>
+</div> 
+
+</div>
+
+
+<script>
+    // her liksom
+    let redCircle = document.getElementById("circle1");
+    let yellowCircle = document.getElementById("circle2");
+    let greenCircle = document.getElementById("circle3");
+
+    // turnOff(circle1, circle2, circle3) = true;
+
+// paramenterene som sends i funksjoneen din vurderes ikke gradvis
+function turnOn(status1,status2,status3)  {
+    //slikt;
+    
+    /* if (status1 === 'active') {
+        redCircle.classList.remove("inactive");
+        yellowCircle.classList.add("inactive");
+        greenCircle.classList.add("inactive"); console.log("if1");
+    }
+    if (status2 === 'active') {
+        redCircle.classList.add("inactive");
+        yellowCircle.classList.remove("inactive");
+        greenCircle.classList.add("inactive"); console.log("if2");
+    }
+    if (status3 === 'active') {
+        redCircle.classList.add("inactive");
+        yellowCircle.classList.add("inactive");
+        greenCircle.classList.remove("inactive"); console.log("if3");
+    } */
+    
+// eller dette; 
+    if (status1 == 'active') {
+        redCircle.classList.remove("inactive");
+        yellowCircle.classList.add("inactive");
+        greenCircle.classList.add("inactive");
+    }
+    if (status2 == 'active') {
+        redCircle.classList.add("inactive");
+        yellowCircle.classList.remove("inactive");
+        greenCircle.classList.add("inactive");     
+    }
+    if (status3 == 'active') {
+        redCircle.classList.add("inactive");
+        yellowCircle.classList.add("inactive");
+        greenCircle.classList.remove("inactive");
+    }
+    if (status1 == 'active' && status2 == 'active') {
+        redCircle.classList.remove("inactive");
+        yellowCircle.classList.remove("inactive");
+        greenCircle.classList.add("inactive");
+    }
+
+// console.log(status1,status2,status3);
+
+}
+
+function redLight() {
+    redCircle.classList.remove("inactive");
+    yellowCircle.classList.add("inactive");
+    greenCircle.classList.add("inactive");
+}
+function yellowRedLight() {
+    redCircle.classList.remove("inactive");
+    yellowCircle.classList.remove("inactive");
+    greenCircle.classList.add("inactive");
+    
+}
+
+function yellowLight() {
+    redCircle.classList.add("inactive");
+    yellowCircle.classList.remove("inactive");
+    greenCircle.classList.add("inactive");  
+}
+
+function greenLight() {
+    redCircle.classList.add("inactive");
+    yellowCircle.classList.add("inactive");
+    greenCircle.classList.remove("inactive");
+}
+function auto() {
+    setTimeout(redLight,0);
+    setTimeout(yellowRedLight,2000);
+    setTimeout(greenLight,4000);
+    setTimeout(yellowLight,8000);
+    setTimeout(redLight,10000);
+}
+
+
+
+</script>
+
+
+
+</body>
+</html>
