@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8" /> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="keyboard">
+        <div class="row1">
+
+     <div onclick="pushThis(this)">Q</div>
+     <div onclick="pushThis(this)">E</div>
+     <div onclick="pushThis(this)">R</div>
+     <div onclick="pushThis(this)">T</div>
+     <div onclick="pushThis(this)">Y</div>
+     <div onclick="pushThis(this)">U</div>
+     <div onclick="pushThis(this)">I</div>
+     <div onclick="pushThis(this)">O</div>
+     <div onclick="pushThis(this)">P</div>
+    </div>
+
+    <div class="row2">
+     <div onclick="pushThis(this)">A</div>
+     <div onclick="pushThis(this)">S</div>
+     <div onclick="pushThis(this)">D</div>
+     <div onclick="pushThis(this)">F</div>
+     <div onclick="pushThis(this)">G</div>
+     <div onclick="pushThis(this)">H</div>
+     <div onclick="pushThis(this)">J</div>
+     <div onclick="pushThis(this)">K</div>
+     <div onclick="pushThis(this)">L</div>
+    </div>
+
+    <div class="row3">
+     <div onclick="pushThis(this)">Z</div>
+     <div onclick="pushThis(this)">X</div>
+     <div onclick="pushThis(this)">C</div>
+     <div onclick="pushThis(this)">V</div>
+     <div onclick="pushThis(this)">B</div>
+     <div onclick="pushThis(this)">N</div>
+     <div onclick="pushThis(this)">M</div>
+    </div>
+</div>
+
+<input id="input" type="text" onchange="inputValue(this.value)">
+
+
+<script>
+    // pushThis();
+    function pushThis(elem) {
+        document.getElementById('input').value += `${elem.innerHTML}`;
+    }  
+
+
+</script>
+
+<style>
+        .row1, .row2, .row3{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+  
+</style>
+</body>
+</html>
