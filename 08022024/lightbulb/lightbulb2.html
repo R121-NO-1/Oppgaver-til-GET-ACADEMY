@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIGHTBULB</title>
+</head>
+<body>
+    <main>
+            <div id="Circle">
+                <h2>LightBulb</h2>
+            </div>
+
+
+                    <div id="circleBorder"> 
+
+                    </div>
+
+        <div>
+            <button type="button" id="lightSwitch">
+                &#9211;
+            </button>
+        </div>       
+
+    </main>
+    <style>
+        #Circle {
+            width: 80px;
+            height: 120px;
+            background-color: grey;
+            border-radius: 40px 40px 10px 10px; /* rund topp og litt flatere bunn for lys */
+            position: relative;
+            margin: 20px auto;
+            transition: background-color 0.5s, box-shadow 0.5s; /* vi lager glatte overganger*/
+
+            /*fungerer koding?*/
+            /*background-color: yellow;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            opacity: 100%;*/
+        
+        }
+
+        #circle:after { /*refresh igjen*/
+            content: "helllo";
+            position: absolute;
+            bottom:-20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 20px;
+            background-color: #1b1d1a;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(146, 124, 124, 0.4); 
+        }
+
+            
+        /*.circleBorder{
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            opacity: 100%;
+            border: 2px solid black;
+        }*/
+
+
+
+
+    </style>
+
+    <script>
+
+    </script>
+
+
+</body>
+</html>
