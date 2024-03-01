@@ -7,69 +7,158 @@
 </head>
 <body>
     <main>
-            <div id="Circle">
-                <h2>LightBulb</h2>
+        <div id="Circle">
+            
+        </div>
+  <div>
+  <h2>LightBulb</h2>
+  </div>
+
+
+    <div>
+        <button type="button" id="lightSwitchON" onclick="LightOn()">
+            &#9211;
+        </button>
+
+            <div type="text" id="LightOnIndicator">
+                <p>**Light Is On!**</p>
             </div>
+    </div>
+    
 
+    <div>
+        <button type="button" id="lightSwitchOff" onclick="LightOff()">
+            &#9211;
+        </button>
+        
+        <div type="text" id="LightOffIndicator">
+            <p>**Light Is Off!**</p>
+        </div>
+    </div>              
 
-                    <div id="circleBorder"> 
+    <sup>
+        Remainder of works
+adding inactive class functions for textindicator0 and textIndicator, troubleshooting, and testing. ; issues, line 151:, and line 30:72
+    </sup>
 
-                    </div>
-
-        <div>
-            <button type="button" id="lightSwitch">
-                &#9211;
-            </button>
-        </div>       
+</main>
 
     </main>
+
+
+
     <style>
-        #Circle {
-            width: 80px;
-            height: 120px;
-            background-color: grey;
-            border-radius: 40px 40px 10px 10px; /* rund topp og litt flatere bunn for lys */
-            position: relative;
-            margin: 20px auto;
-            transition: background-color 0.5s, box-shadow 0.5s; /* vi lager glatte overganger*/
+        /* vi lager glatte overganger*/
+        /*refresh igjen*/
+    /* #Circle {
+    width: 200px;
+    height: 200px;
+    background-color: grey;
+    border-radius: 50%; 
+    position: relative;
+    margin: 20px auto;
+    border: 2px solid black;
+    transition: background-color 0.5s, box-shadow 0.5s; 
+    }
 
-            /*fungerer koding?*/
-            /*background-color: yellow;
-            border-radius: 50%;
-            width: 100px;
-            height: 100px;
-            opacity: 100%;*/
-        
-        }
 
-        #circle:after { /*refresh igjen*/
-            content: "helllo";
+ #circle:after { 
+            content: "hello";
             position: absolute;
             bottom:-20px;
             left: 50%;
             transform: translateX(-50%);
             width: 30px;
             height: 20px;
-            background-color: #1b1d1a;
+            background-color: yellow;
             border-radius: 5px;
             box-shadow: 0 2px 4px rgba(146, 124, 124, 0.4); 
-        }
+        } */
 
             
-        /*.circleBorder{
-            border-radius: 50%;
-            width: 100px;
-            height: 100px;
-            opacity: 100%;
-            border: 2px solid black;
-        }*/
+
+#Circle {
+    width: 200px;
+    height: 200px;
+    background-color: grey;
+    border-radius: 50%;
+    position: relative;
+    border-width: 5px;
+    border: 2px solid black;
+    transition: background-color 0.5s, box-shadow 0.5s; /* Smooth transitions */
+}
+
+#Circle.active {
+    background-color: yellow; /* Change background color when active */
+    box-shadow: 0 0 20px yellow; /* Add glow effect */
+}
+
+#Circle.inactive {
+    background-color: gray; /* Change background color when inactive */
+
+}
+
+#LightOnIndicator.active {
+    font-size: 40px; /* Adjust */
+    font-family: 'Comic Sans MS';
+    color:darkblue;
 
 
-
+}
+#LightOnIndicator.inactive {
+    font-size: 20px; /* Adjust */
+    font-family: 'Times New Roman'
+}
+/*
+#LightOffIndicator {
+    
+} */
 
     </style>
 
     <script>
+
+/* 
+function DetectLightOnIndicator(){
+myElement.addEventListener('click', LightOn(), false); return{
+
+}
+}
+*/
+
+
+
+function LightOn(){
+    // her gjør vi alt som skal skje når vi skrur på bryteren:
+    // først så gjør vi pæra "aktiv" så den lyser gult
+    var circle = document.getElementById('Circle');
+    circle.classList.remove('inactive');
+    circle.classList.add('active');
+
+    // og her kan vi endre teksten sin størrelse for å indikere at bryteren er på
+    var textIndicator = document.getElementById('LightOnIndicator'); //naming textIndicator as a variable called by document.getElementById('LightOnTextIndicator');
+    textIndicator.classList.remove('inactive'); // remov e class 'inactive' from textIndicator if it is inactive **first**
+    textIndicator.classList.add('active'); // add class 'active' from textIndicator if it is active, , **second**
+
+}
+
+function LightOff(){
+    var circle = document.getElementById('Circle');
+    circle.classList.remove('active');
+    circle.classList.add('inactive');
+
+    var textIndicator0 = document.getElementById('LightOffIndicator'); //naming textIndicator as a variable called by document.getElementById('LightOnTextIndicator');
+    textIndicator.classList.remove('active'); // remove class 'active' from textIndicator if it is active, **first** 
+    textIndicator0.classList.remove('active'); // remove class 'active' from textIndicator if it is active, **first**
+    textIndicator0.classList.add('inactive'); // add class 'inactive' to textIndicator if it is inactive , **second**
+
+
+}
+
+/* Remainder of works
+adding inactive class functions for textindicator0 and textIndicator, troubleshooting, and testing. 
+*/
+
 
     </script>
 

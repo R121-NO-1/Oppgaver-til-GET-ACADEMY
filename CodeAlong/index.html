@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetDisplay</title>
+    
+    <style>
+    .invisible{
+    opacity: 0%;
+        
+    }
+
+    .visible {
+opacity: 100%;
+    }
+
+
+
+    </style>
+</head>
+
+
+<body>
+<!-- PRØV KUN JAVASCRIPT
+    
+    
+     Du skal kunne trykke på en knapp, og så skal det stå enten "hund", "katt" eller "esel" på nettsiden. Det skal være helt tilfeldig hvilket dyr som dukker opp når du trykker på knappen. 
+    Lag en ny knapp med et annet dyr som du velger selv, og når du trykker på denne, skal dette dyret vises på nettsiden. Ikke hardkod denne strengen.-->
+    
+<div id="Entity">
+
+    <div id="E1">
+        
+    <h1>Hund</h1>
+
+    </div>
+    <button onclick="Visible_1()"> Select This </button>
+    
+    <div id="E2">
+        <h1>Katt</h1>
+    
+        </div>
+        <button onclick="Visible_2()"> Select This </button>
+
+    <div id="E3">
+        <h1>Esel</h1>
+    <button onclick="Visible_3()"> Select This </button>
+        </div>
+</div>
+<div id="btn4rng@E-fromSelection"> <!-- random animal (entity) from specified selection -->
+    <button type="button" id="rngBtn" >
+        Rand
+    </button>
+    
+<div id="btn4rng@E"> <!-- random animal (entity) from a selection -->
+<button type="button" id="rngBtn" >
+
+</button>
+
+</div>
+
+
+    <script>
+
+        function Visible_1() {
+            document.getElementById('E1').classList.add("visible");
+            document.getElementById('E1').classList.remove("invisible");
+
+            document.getElementById('E2').classList.add("invisible");
+            document.getElementById('E3').classList.add("invisible");
+
+
+        }
+
+        
+        function Visible_2() {
+            document.getElementById('E2').classList.add("visible");
+            document.getElementById('E2').classList.remove("invisible");            
+            document.getElementById('E1').classList.add("invisible");
+            document.getElementById('E3').classList.add("invisible");
+        }
+
+        
+        function Visible_3() {
+            document.getElementById('E3').classList.add("visible");
+            document.getElementById('E3').classList.remove("invisible");
+
+            document.getElementById('E1').classList.add("invisible");
+            document.getElementById('E2').classList.add("invisible");
+        }
+
+document.
+
+
+    </script>
+
+</body>
+</html>

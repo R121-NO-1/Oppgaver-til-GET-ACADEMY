@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krokodillespillet</title>
+</head>
+<body>
+   
+<div id="app"> </div>
+
+    <script>
+        let integer1 = Math.floor(Math.random()*100)
+        let integer2 = Math.ceil(Math.random()*100)
+        updateView()
+        function updateView() {
+            document.getElementById('app').innerHTML = 
+` <div id="integer1">  <!--- only integers in this section-->
+    ${integer1}  <!--- placeholder numbers-->
+    </div>
+    
+    <div id="input" pattern="[<] [>] [=]> <!--- input section should only have logical operators such as <, > and = -->
+        <label for="inputField" class="label1"> Chosen Logical Operator:</label>
+        <input type="text" class="inputField" /> </input>  
+    </div>
+
+    <div id="integer2"> <!--- only integers in this section-->
+    ${integer2}   <!--- placeholder numbers-->
+    </div>
+
+    <div id="submit"> <!--- submit button -->
+        <input type="submit"> </input>
+    </div>
+
+    <div id="reset"> <!--- resets program back to 0 points, and unaltered input field-->    
+        <input type="reset">
+    </div>`;
+
+            
+            
+        }
+
+    </script>
+    
+</body>
+</html>
